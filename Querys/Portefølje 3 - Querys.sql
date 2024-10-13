@@ -31,10 +31,10 @@ WHERE country.Population BETWEEN
     AND 
     (SELECT Population * 1.1 FROM country WHERE Name = 'Japan');
 -- 7
-SELECT Name, GNP, RANK() OVER (ORDER BY GNP DESC) AS Rank
+SELECT Name, GNP, RANK() OVER (ORDER BY GNP DESC) AS `Rank`
 FROM country
 WHERE GNP IS NOT NULL
-ORDER BY GNP DESC;
+ORDER BY `Rank`;
 -- 9
 SELECT Language, COUNT(DISTINCT CountryCode) AS CountryCount
 FROM countrylanguage
